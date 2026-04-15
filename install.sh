@@ -140,6 +140,11 @@ echo "Aplicando as novas configurações..."
 # Copia tudo de config/ para ~/.config/
 cp -r config/* ~/.config/
 
+# Copia os wallpapers
+mkdir -p ~/wallpapers
+cp -r wallpapers/* ~/wallpapers/
+echo "Wallpapers copiados para ~/wallpapers/"
+
 # Copia os arquivos da home para ~/
 cp -a home/. ~/
 
