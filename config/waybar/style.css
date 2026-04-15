@@ -1,0 +1,145 @@
+@define-color space-black #16110D;
+@define-color deep-surface #4A3525;
+@define-color ring-cream #EADAC9;
+@define-color saturn-bronze #A88463;
+@define-color star-bronze #A88463;
+/* Nota: Adicionei a variável abaixo pois seu CSS usa @star-cyan no hover da rede, mas ela não estava definida no topo */
+@define-color star-cyan #86BDBA; 
+
+* {
+  font-family: "JetBrains Mono Nerd Italic", monospace;
+  border: transparent;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: alpha(@space-black, 0.75);
+  border-radius: 0;
+  color: @ring-cream;
+  padding: 2px 12px;
+  transition: 0.3s all;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0 1rem;
+  color: @ring-cream;
+  border: none;
+}
+
+.modules-center {
+  padding: 2px;
+}
+
+#custom-icon {
+  font-size: 22px;
+  padding-right: 10px;
+}
+
+#window {
+  font-weight: bold;
+  font-size: 16px;
+  color: @star-bronze;
+  transition: all 0.3s ease;
+}
+
+#workspaces {
+  font-weight: bold;
+  font-size: 12px;
+  border: none;
+}
+
+#workspaces button {
+  color: @ring-cream;
+  border-radius: 0;
+  transition: 0.2s ease-out;
+  border-bottom: 1px solid transparent;
+}
+
+#workspaces button.urgent {
+  border-bottom: 1px solid @star-bronze;
+}
+
+#workspaces button.active {
+  border-bottom: 1px solid @saturn-bronze;
+  color: @saturn-bronze;
+}
+
+#tray {
+  color: @ring-cream;
+}
+
+#clock {
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+#clock:hover {
+  color: @saturn-bronze;
+}
+
+/* Estilo para Wi-Fi e Perfis de Energia */
+#network,
+#power-profiles-daemon {
+  font-weight: bold;
+  padding: 0 10px;
+  color: @ring-cream;
+  transition: all 0.3s ease;
+}
+
+#network:hover,
+#power-profiles-daemon:hover {
+  color: @star-cyan;
+}
+
+#network.disconnected {
+  color: @deep-surface;
+}
+
+/* Destaque para o modo de economia de energia */
+#power-profiles-daemon.power-saver {
+  color: @star-cyan;
+}
+
+/* Destaque para o modo performance */
+#power-profiles-daemon.performance {
+  color: @saturn-bronze;
+}
+
+/* Estilo para CPU, RAM, Bluetooth e Audio (Adicionado pulseaudio) */
+#cpu,
+#memory,
+#bluetooth,
+#pulseaudio {
+  font-weight: bold;
+  padding: 0 10px;
+  color: @ring-cream;
+  transition: all 0.3s ease;
+}
+
+#cpu:hover,
+#memory:hover,
+#bluetooth:hover,
+#pulseaudio:hover {
+  color: @star-cyan;
+}
+
+/* Cor específica se o bluetooth estiver desconectado/desligado */
+#bluetooth.disabled {
+  color: @deep-surface;
+}
+
+#bluetooth.connected {
+  color: @saturn-bronze;
+}
+
+/* Estado mutado do Áudio */
+#pulseaudio.muted {
+  color: @deep-surface;
+}
+
+/* Se a RAM passar de 80%, muda para ciano como aviso visual */
+#memory.warning {
+  color: @star-cyan;
+}
