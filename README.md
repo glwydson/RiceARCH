@@ -14,7 +14,7 @@ Bem-vindo ao **RiceARCH**! Este repositório contém meus dotfiles e configuraç
 Basta clonar este repositório e executar o script de instalação automatizado:
 
 ```bash
-git clone <url-do-seu-repositorio>
+git clone https://github.com/glwydson/RiceARCH.git
 cd RiceARCH
 chmod +x install.sh
 ./install.sh
